@@ -1,0 +1,5 @@
+<ul class="list-group list-group-flush" *ngIf="linkList">
+  <li class="list-group-item" *ngFor="let linkItem of linkList">
+    <a [href]="linkItem.url" rel="noopener noreferrer">{{linkItem.text}}</a>
+  </li>
+</ul>
