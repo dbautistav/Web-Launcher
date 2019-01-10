@@ -11,5 +11,13 @@ export class BoardComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() { }
+  ngOnInit() {
+    /**
+     * TODO:
+     *   - GET config.json, load it and process it
+     */
+    const cards: Array<Card> = [ ];
+
+    this.cards = cards;
+  }
 }
