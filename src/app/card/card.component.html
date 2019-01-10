@@ -1,13 +1,13 @@
 <div class="card" [ngClass]="card.border">
   <div class="card-header" *ngIf="card.header" (click)="openUrl()">{{card.header}}</div>
 
-  <div class="card-body d-flex flex-row text-right" (click)="openUrl()">
+  <div class="card-body d-flex justify-content-between" (click)="openUrl()">
     <div class="d-flex flex-column align-self-center">
         <img [src]=card.iconSource *ngIf="card.iconKey && card.iconSource" [alt]="card.iconKey">
     </div>
-    <div>
+    <div class="d-flex flex-column align-self-center text-right">
       <h5 class="card-title" *ngIf="card.title">{{card.title}}</h5>
-      <p class="card-text">{{card.text}}</p>
+      <p class="card-text" *ngIf="card.text">{{card.text}}</p>
     </div>
   </div>
 

@@ -29,5 +29,8 @@ export class CardComponent implements OnInit {
   //    TODO: finish this!
   // see: vsavkin.com/angular-router-understanding-redirects-2826177761fc
   // see: medium.com/@adrianfaciu/using-the-angular-router-to-navigate-to-external-links-15cc585b7b88  
-  openUrl() { }
+  openUrl() {
+    //  FIXME!!
+    window.location.href = this.card.url;
+  }
 }
