@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Board } from './board';
 import { Card } from '../card/card';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-board',
@@ -7,17 +9,14 @@ import { Card } from '../card/card';
   styleUrls: ['./board.component.css']
 })
 export class BoardComponent implements OnInit {
-  private cards: Array<Card>;
+  cards: Array<Card>;
 
-  constructor() { }
+  constructor(private dataService: DataService) { }
 
   ngOnInit() {
-    /**
-     * TODO:
-     *   - GET config.json, load it and process it
-     */
-    const cards: Array<Card> = [ ];
-
-    this.cards = cards;
+    this.dataService.fetchBoardConfig()
+      .then((config: Board) => {
+        this.cards = config.board;
+      });
   }
 }
