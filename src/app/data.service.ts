@@ -9,7 +9,7 @@ export class DataService {
   constructor(private http: HttpClient) {}
 
   fetchBoardConfig() {
-    const configUrl = '/assets/config.json';
+    const configUrl = './assets/config.json';
     return this.http.get(configUrl).toPromise();
   }
 }
